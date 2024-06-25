@@ -21,11 +21,3 @@ module "workspace" {
     organization_name = var.organization_name
     project_id        = each.value.project_id
 }
-moved {
-  from = module.project
-  to   = module.project["poc-terraform-project"]
-}
-moved {
-  from = module.workspace
-  to   = module.workspace["poc-terraform-workspace"]
-}

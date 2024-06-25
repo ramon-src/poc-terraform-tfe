@@ -3,7 +3,7 @@ terraform {
     organization = "ramon-terraform-course"
 
     workspaces {
-      name = "poc-terraform-workspace"
+      name = "poc-workspace"
     }
   }
 }
