@@ -10,8 +10,9 @@ locals {
     workspace = {
         "poc-workspace" = {
             description = "Example description of workspace"
-            execution_mode = "local"
+            execution_mode = "remote"
             project_id = module.project["poc-terraform-project"].id
+            vcs_repo_identifier = "ramon-src/poc-terraform-tfe"
         }
     }
 }
