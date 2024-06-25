@@ -5,6 +5,11 @@
 - Doppler
 - Terraform
 
+## Docs
+
+- https://github.com/ALT-F4-LLC/terraform-tfe-project
+- https://github.com/ALT-F4-LLC/terraform-tfe-workspace
+
 ```
     terraform init
 ```

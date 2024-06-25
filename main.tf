@@ -1,21 +1,31 @@
 // modules dont have providers
 
 module "project" {
+    for_each = local.project
     source  = "ALT-F4-LLC/project/tfe"
     version = "0.4.0" 
 
-    name              = "poc-terraform-project"
+    name              = each.key
     organization_name = var.organization_name
-    description       = "something"
+    description       = each.value.description
 }
 
 module "workspace" {
+    for_each = local.workspace
     source  = "ALT-F4-LLC/workspace/tfe"
     version = "0.6.0"
 
-    name              = "poc-terraform-workspace"
-    description       = "something"
-    execution_mode    = "local"
+    name              = each.key
+    description       = each.value.description
+    execution_mode    = each.value.execution_mode
     organization_name = var.organization_name
-    project_id        = module.project.id
+    project_id        = each.value.project_id
+}
+moved {
+  from = module.project
+  to   = module.project["poc-terraform-project"]
+}
+moved {
+  from = module.workspace
+  to   = module.workspace["poc-terraform-workspace"]
 }
