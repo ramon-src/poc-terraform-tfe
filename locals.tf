@@ -16,7 +16,7 @@ locals {
         }
         "poc-github-workspace" = {
             description = "Example description of workspace"
-            execution_mode = "local"
+            execution_mode = "remote"
             project_id = module.project["poc-terraform-project"].id
             vcs_repo_identifier = "${var.github_organization_name}/poc-terraform-github"
         }
